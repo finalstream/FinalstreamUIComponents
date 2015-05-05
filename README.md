@@ -2,6 +2,7 @@
 
 WPF向けのUIコンポーネントです。
 [Livet](https://github.com/ugaya40/Livet)を使用させていただいており、MVVM向けに作成しております。
+
 今後、Finalstreamのアプリケーションと共に精錬していく予定です。
 
 
