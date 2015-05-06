@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behaviors\FileDropBehavior.cs" />
+    <Compile Include="Behaviors\LeftClickContextBehavior.cs" />
     <Compile Include="Behaviors\PlaceHolderBehavior.cs" />
     <Compile Include="Converters\BoolConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
@@ -113,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FinalstreamCommons2\FinalstreamCommons.csproj">
+      <Project>{bdf2ba67-4b60-40b5-a039-1bf67bbe25c4}</Project>
+      <Name>FinalstreamCommons</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

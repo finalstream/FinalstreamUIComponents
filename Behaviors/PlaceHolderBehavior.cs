@@ -3,14 +3,32 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 using System.Windows.Media;
+using FinalstreamCommons.Utils;
 
 namespace FinalstreamUIComponents.Behaviors
 {
-    // プレースホルダーを表示する添付ビヘイビア
-    
-
+    /// <summary>
+    /// プレースホルダーを表示するビヘイビアを表します。
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class PlaceHolderBehaviorBase<T> : Behavior<T> where T : Control
     {
+
+        #region OnForegroundChangedイベント
+
+        // Event object
+        public event EventHandler ForegroundChanged;
+
+        protected virtual void OnForegroundChanged(EventArgs e)
+        {
+            var handler = this.ForegroundChanged;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
+        #endregion
 
         public String Placeholder
         {
@@ -21,9 +39,25 @@ namespace FinalstreamUIComponents.Behaviors
         public static readonly DependencyProperty PlaceholderProperty =
             DependencyProperty.Register("Placeholder", typeof(String), typeof(PlaceHolderBehaviorBase<T>));
 
+        public SolidColorBrush Foreground
+        {
+            get { return (SolidColorBrush)GetValue(ForegroundProperty); }
+            set {
+                SetValue(ForegroundProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty ForegroundProperty =
+            DependencyProperty.Register("Foreground", typeof(SolidColorBrush), typeof(PlaceHolderBehaviorBase<T>), new FrameworkPropertyMetadata(
+                (o, args) =>
+                {
+                    var b = o as TextBoxPlaceholderBehavior;
+                    if (b!=null) b.OnForegroundChanged(EventArgs.Empty);
+                }));
+
         protected abstract String GetContent(T control);
 
-        protected Brush defaultBackground;
+        //protected Brush defaultBackground;
 
         protected override void OnAttached()
         {
@@ -49,7 +83,13 @@ namespace FinalstreamUIComponents.Behaviors
                 return;
             }
 
-            this.defaultBackground = control.Background;
+            this.ForegroundChanged += (o, args) =>
+            {
+                // 文字色が変わったら再描画
+                OnLostFocus(this.AssociatedObject, new EventArgs());
+            };
+
+            //this.defaultBackground = control.Background;
             control.Background = this.CreateVisualBrush(this.Placeholder);
         }
 
@@ -79,18 +119,15 @@ namespace FinalstreamUIComponents.Behaviors
             control.Background = this.CreateVisualBrush(this.Placeholder);
         }
 
-        private VisualBrush CreateVisualBrush(string placeHolder)
+        protected VisualBrush CreateVisualBrush(string placeHolder)
         {
-            //var style = Application.Current.FindResource(typeof(Label)) as Style;
             var visual = new Label
             {
                 Content = placeHolder,
                 Padding = new Thickness(5, 1, 1, 1),
-                Foreground = new SolidColorBrush(Colors.LightGray),
-                //Background = this.defaultBackground,
+                Foreground = this.Foreground == null ? new SolidColorBrush(Colors.LightGray) : new SolidColorBrush(ColorUtils.GetReverseColor(this.Foreground.Color, 125)),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center,
-                //Style = style
             };
 
             return new VisualBrush(visual)
@@ -125,10 +162,16 @@ namespace FinalstreamUIComponents.Behaviors
                 return;
             }
 
-            if (control.IsFocused == false)
+            var content = this.GetContent(control);
+            if (String.IsNullOrEmpty(content) == false)
             {
-                control.Background = this.defaultBackground;
+                control.Background = this.CreateVisualBrush("");
             }
+
+            //if (control.IsFocused == false)
+            //{
+            //    //control.Background = this.Background;
+            //}
         }
 
         protected override string GetContent(TextBox control)

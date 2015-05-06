@@ -12,8 +12,10 @@
         <copyright>Copyright ©  2015 Finalstream</copyright>
         <language />
         <dependencies>
+            <dependency id="FinalstreamCommons" version="0.3.21.0" />
             <dependency id="LivetCask" version="1.1.0.0" />
         </dependencies>
+        <tags>WPF UI Components</tags>
     </metadata>
     <files />
 </package>

@@ -82,6 +82,11 @@ namespace FinalstreamUIComponents.Models
 
         #endregion
 
+        /// <summary>
+        /// 新しいインスタンスを初期化します。
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="value"></param>
         public InputParam(string title, object value)
         {
             _title = title;
@@ -89,6 +94,13 @@ namespace FinalstreamUIComponents.Models
             IsVisibleCombobox = false;
         }
 
+        /// <summary>
+        /// 新しいインスタンスを初期化します。
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="value"></param>
+        /// <param name="values"></param>
+        /// <remarks>コンボボックスを表示する際に使用します。</remarks>
         public InputParam(string title, object value, IEnumerable<string> values)
         {
             _title = title;
