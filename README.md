@@ -10,4 +10,4 @@ WPF向けのUIコンポーネントです。
 
 [![NuGet](https://img.shields.io/nuget/v/FinalstreamUIComponents.svg?style=plastic)](https://www.nuget.org/packages/FinalstreamUIComponents/)
 
-[![GitHub license](https://img.shields.io/github/license/finalstream/FinalstreamUIComponents.svg)]()
+[![GitHub license](https://img.shields.io/github/license/finalstream/FinalstreamUIComponents.svg)](https://github.com/finalstream/FinalstreamUIComponents/blob/master/LICENSE)
