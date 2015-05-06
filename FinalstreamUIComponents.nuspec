@@ -6,6 +6,7 @@
         <title>FinalstreamUIComponents</title>
         <authors>Finalstream</authors>
         <owners>Finalstream</owners>
+        <projectUrl>https://github.com/finalstream/FinalstreamUIComponents</projectUrl>
         <licenseUrl>https://github.com/finalstream/FinalstreamUIComponents/blob/master/LICENSE</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>WPF UI Components.</description>
