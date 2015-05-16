@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 using System.Windows.Media;
-using FinalstreamCommons.Utils;
+using FinalstreamUIComponents.Utils;
 
 namespace FinalstreamUIComponents.Behaviors
 {
