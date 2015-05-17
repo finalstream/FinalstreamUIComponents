@@ -20,8 +20,8 @@ WPFのUIまわりのヘルパー的な機能を提供します。
 * 入力テキストWithラベルコントール
 
 ###Converters
-* BoolToVisibility
-* NullVosibility
-* StringIsNullOrEmptyVisibility
+* BoolToVisibilityConverter
+* NullVisibilityConverter
+* StringIsNullOrEmptyVisibilityConverter
 
 
