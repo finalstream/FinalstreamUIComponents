@@ -10,16 +10,16 @@ WPF向けのUIコンポーネントです。
 ## 主な機能
 WPFのUIまわりのヘルパー的な機能を提供します。
 
-###ビヘイビア
+###Behaviors
 * ファイルのドラッグ＆ドロップ
 * 左クリックでコンテキストメニューを開く
 * テキストボックスのプレースホルダー（プレースホルダー文字色変更可能）
 
-###コントロール
+###Controls
 * NumericUpDownコントロール
 * 入力テキストWithラベルコントール
 
-###コンバータ
+###Converters
 * BoolToVisibility
 * NullVosibility
 * StringIsNullOrEmptyVisibility
