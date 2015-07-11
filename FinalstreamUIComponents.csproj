@@ -65,6 +65,8 @@
     <Compile Include="Behaviors\FileDropBehavior.cs" />
     <Compile Include="Behaviors\LeftClickContextBehavior.cs" />
     <Compile Include="Behaviors\PlaceHolderBehavior.cs" />
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\InteractiveCommandAction.cs" />
     <Compile Include="Converters\BoolConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\NullVisibilityConverter.cs" />
