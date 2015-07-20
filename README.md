@@ -23,5 +23,8 @@ WPFのUIまわりのヘルパー的な機能を提供します。
 * BoolToVisibilityConverter
 * NullVisibilityConverter
 * StringIsNullOrEmptyVisibilityConverter
+* StringIsNullOrEmptyFontBoldConverter（ある値が入ってたらフォントを太くする）
 
 
+###Commands
+* CancelableDataGridSortingCommand（DataGridのヘッダクリックソートのサイクルをASC→DESC→NONEにする）
