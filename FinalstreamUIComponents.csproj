@@ -65,6 +65,7 @@
     <Compile Include="Behaviors\FileDropBehavior.cs" />
     <Compile Include="Behaviors\LeftClickContextBehavior.cs" />
     <Compile Include="Behaviors\PlaceHolderBehavior.cs" />
+    <Compile Include="Commands\CancelableDataGridSortingCommand.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\InteractiveCommandAction.cs" />
     <Compile Include="Converters\BoolConverter.cs" />
