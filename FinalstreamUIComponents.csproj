@@ -69,6 +69,7 @@
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\InteractiveCommandAction.cs" />
     <Compile Include="Converters\BoolConverter.cs" />
+    <Compile Include="Converters\BoolToFontBoldConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\NullVisibilityConverter.cs" />
     <Compile Include="Converters\StringIsNullOrEmptyToVisibilityConverter.cs" />
