@@ -167,6 +167,10 @@ namespace FinalstreamUIComponents.Behaviors
             {
                 control.Background = this.CreateVisualBrush("");
             }
+            else
+            {
+                control.Background = this.CreateVisualBrush(this.Placeholder);
+            }
 
             //if (control.IsFocused == false)
             //{

@@ -49,5 +49,11 @@ namespace FinalstreamUIComponents.Commands
         }
 
         #endregion
+
+        protected virtual void OnCanExecuteChanged()
+        {
+            var handler = CanExecuteChanged;
+            if (handler != null) handler(this, EventArgs.Empty);
+        }
     }
 }

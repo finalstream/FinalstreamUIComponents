@@ -77,6 +77,9 @@
     <Compile Include="Models\InputParam.cs" />
     <Compile Include="Utils\ColorUtils.cs" />
     <Compile Include="ViewModels\InputTextContentViewModel.cs" />
+    <Compile Include="Views\ClearableTextbox.xaml.cs">
+      <DependentUpon>ClearableTextbox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InputTextContent.xaml.cs">
       <DependentUpon>InputTextContent.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\ClearableTextbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\InputTextContent.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
