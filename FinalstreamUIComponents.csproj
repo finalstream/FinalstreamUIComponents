@@ -46,6 +46,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\LivetCask.1.1.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -71,6 +72,7 @@
     <Compile Include="Converters\BoolConverter.cs" />
     <Compile Include="Converters\BoolToFontBoldConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumToVisibilityConverter.cs" />
     <Compile Include="Converters\NullVisibilityConverter.cs" />
     <Compile Include="Converters\StringIsNullOrEmptyToVisibilityConverter.cs" />
     <Compile Include="Converters\StringIsNullOrEmptyToFontBoldConverter.cs" />
@@ -79,6 +81,10 @@
     <Compile Include="ViewModels\InputTextContentViewModel.cs" />
     <Compile Include="Views\ClearableTextbox.xaml.cs">
       <DependentUpon>ClearableTextbox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditableStringListBox.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>EditableStringListBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\InputTextContent.xaml.cs">
       <DependentUpon>InputTextContent.xaml</DependentUpon>
@@ -115,6 +121,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\ClearableTextbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditableStringListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -11,7 +12,8 @@ namespace FinalstreamUIComponents.Commands
     /// <remarks>DataGridのヘッダクリックのソートは昇順→降順のループなので昇順→降順→ソートなしのループになります。</remarks>
     public class CancelableDataGridSortingCommand : DelegateCommand<DataGridSortingEventArgs>
     {
-        public CancelableDataGridSortingCommand(object source, Action afterAction = null) : base(args =>
+        public CancelableDataGridSortingCommand(object source, Action<DataGridSortingEventArgs> afterAction = null)
+            : base(args =>
         {
             var sortDirection = args.Column.SortDirection;
             if (sortDirection == ListSortDirection.Descending)
@@ -22,7 +24,7 @@ namespace FinalstreamUIComponents.Commands
                 var view = CollectionViewSource.GetDefaultView(source);
                 view.SortDescriptions.Clear();
             }
-            if (afterAction != null) afterAction.Invoke();
+            if (afterAction != null) afterAction.Invoke(args);
         })
         {
         }
