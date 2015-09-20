@@ -19,6 +19,7 @@ WPFのUIまわりのヘルパー的な機能を提供します。
 * NumericUpDownコントロール
 * 入力テキストWithラベルコントール
 * クリアアイコン付きのテキストボックス
+* 追加削除可能なリストボックス
 
 ###Converters
 * BoolToVisibilityConverter
