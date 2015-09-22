@@ -7,11 +7,16 @@ using Livet;
 
 namespace FinalstreamUIComponents.Models
 {
-    public class InputParam : NotificationObject
+    public class InputParam : NotificationObject, IInputFormParam
     {
         private bool _isModify;
 
         public bool IsModify { get { return _isModify; }}
+
+        public virtual InputType InputType
+        {
+            get { return InputType.String; }
+        }
 
         #region Key変更通知プロパティ
 
@@ -50,9 +55,9 @@ namespace FinalstreamUIComponents.Models
 
         #region Values変更通知プロパティ
 
-        private IEnumerable<string> _values;
+        private IEnumerable<object> _values;
 
-        public IEnumerable<string> Values
+        public IEnumerable<object> Values
         {
             get { return _values; }
             set
@@ -101,7 +106,7 @@ namespace FinalstreamUIComponents.Models
         /// <param name="value"></param>
         /// <param name="values"></param>
         /// <remarks>コンボボックスを表示する際に使用します。</remarks>
-        public InputParam(string title, object value, IEnumerable<string> values)
+        protected InputParam(string title, object value, IEnumerable<string> values)
         {
             _title = title;
             _value = value;
