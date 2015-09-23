@@ -38,6 +38,7 @@ namespace FinalstreamUIComponents.Views
             _viewModel.TitleWidth = 100;
             _viewModel.ValueMinWidth = 250;
             _viewModel.ValueMaxWidth = 450;
+            _viewModel.ValueMaxHeight = 100;
             _viewModel.Message = messge;
             _viewModel.InputParamDictionary = paramDic;
             this.DataContext = _viewModel;
@@ -54,6 +55,11 @@ namespace FinalstreamUIComponents.Views
         }
 
         public double ValueMaxWidth
+        {
+            set { _viewModel.ValueMaxWidth = value; }
+        }
+
+        public double ValueMaxHeight
         {
             set { _viewModel.ValueMaxWidth = value; }
         }

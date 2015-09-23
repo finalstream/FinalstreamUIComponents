@@ -43,17 +43,17 @@ namespace FinalstreamUIComponents.Views
             }
         }
 
-        #region AddText変更通知プロパティ
+        #region AddString変更通知プロパティ
 
-        private string _AddText;
+        private string _AddString;
 
-        public string AddText
+        public string AddString
         {
-            get { return _AddText; }
+            get { return _AddString; }
             set
             {
-                if (_AddText == value) return;
-                _AddText = value;
+                if (_AddString == value) return;
+                _AddString = value;
                 OnPropertyChanged();
             }
         }
@@ -93,8 +93,8 @@ namespace FinalstreamUIComponents.Views
 
         public void Add()
         {
-            if (string.IsNullOrEmpty(AddText) || ItemsSource.Contains(AddText)) return;
-            ItemsSource.Add(AddText);
+            if (string.IsNullOrEmpty(AddString) || ItemsSource.Contains(AddString)) return;
+            ItemsSource.Add(AddString);
             AddTextBox.Clear();
         }
 
@@ -125,16 +125,16 @@ namespace FinalstreamUIComponents.Views
         {
             get
             {
-                if (columnName == "AddText")
+                if (columnName == "AddString")
                 {
-                    if (string.IsNullOrEmpty(AddText))
+                    if (string.IsNullOrEmpty(AddString))
                     {
                         // empty
                         AddButton.IsEnabled = false;
                         return null;
                     }
 
-                    if (ItemsSource.Contains(AddText))
+                    if (ItemsSource.Contains(AddString))
                     {
                         AddButton.IsEnabled = false;
                         return "already exists";
@@ -142,7 +142,7 @@ namespace FinalstreamUIComponents.Views
 
                     if (Validator == ValidatorType.Directory)
                     {
-                        var isValid = Directory.Exists(AddText);
+                        var isValid = Directory.Exists(AddString);
                         AddButton.IsEnabled = isValid;
                         return !isValid ? "invalid" : null;
                     }

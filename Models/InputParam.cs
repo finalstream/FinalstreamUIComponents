@@ -70,23 +70,6 @@ namespace FinalstreamUIComponents.Models
 
         #endregion
 
-        #region IsVisibleCombobox変更通知プロパティ
-
-        private bool _isVisibleCombobox;
-
-        public bool IsVisibleCombobox
-        {
-            get { return _isVisibleCombobox; }
-            set
-            {
-                if (_isVisibleCombobox == value) return;
-                _isVisibleCombobox = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        #endregion
-
         /// <summary>
         /// 新しいインスタンスを初期化します。
         /// </summary>
@@ -96,7 +79,17 @@ namespace FinalstreamUIComponents.Models
         {
             _title = title;
             _value = value;
-            IsVisibleCombobox = false;
+        }
+
+        /// <summary>
+        /// 新しいインスタンスを初期化します。
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="value"></param>
+        public InputParam(string title, IEnumerable<string> values)
+        {
+            _title = title;
+            _values = values;
         }
 
         /// <summary>
@@ -111,7 +104,6 @@ namespace FinalstreamUIComponents.Models
             _title = title;
             _value = value;
             _values = values;
-            IsVisibleCombobox = true;
         }
     }
 }

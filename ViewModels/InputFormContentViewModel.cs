@@ -107,6 +107,23 @@ namespace FinalstreamUIComponents.ViewModels
 
         #endregion
 
+        #region ValueMaxHeight変更通知プロパティ
+
+        private double _valueMaxHeight;
+
+        public double ValueMaxHeight
+        {
+            get { return _valueMaxHeight; }
+            set
+            {
+                if (_valueMaxHeight == value) return;
+                _valueMaxHeight = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        #endregion
+
         #region Message変更通知プロパティ
 
         private string _message;

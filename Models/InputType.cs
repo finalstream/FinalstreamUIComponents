@@ -4,6 +4,7 @@
     {
         String,
         Select,
-        ReadOnly
+        ReadOnly,
+        List
     }
 }

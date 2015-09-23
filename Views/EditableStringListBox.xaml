@@ -74,7 +74,7 @@ AncestorType={x:Type views:EditableStringListBox}}}" MethodName="SelectFolder" /
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Viewbox>
-            <TextBox Name="AddTextBox" Text="{Binding AddText, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type views:EditableStringListBox}},UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnDataErrors=True}"></TextBox>
+            <TextBox Name="AddTextBox" Text="{Binding AddString, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type views:EditableStringListBox}},UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnDataErrors=True}"></TextBox>
         </DockPanel>
         <Button Name="AddButton" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" Padding="0,0,0,0" Content="+">
 
