@@ -17,6 +17,7 @@ WPFのUIまわりのヘルパー的な機能を提供します。
 
 ###Controls
 * 入力フォーム作成支援（ラベルと入力コントロール(TextBox, ComboBox, ListBox, ReadOnly)のセット）  
+以下のような画面が簡単に作れます。  
 ![image](https://cloud.githubusercontent.com/assets/3516444/12699512/2ef2dd28-c801-11e5-8f92-bc09324d456a.png)
 
 * NumericUpDownコントロール  
