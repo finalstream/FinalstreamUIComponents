@@ -29,6 +29,8 @@ WPFのUIまわりのヘルパー的な機能を提供します。
 * 追加削除可能なリストボックス  
 ![image](https://cloud.githubusercontent.com/assets/3516444/12699507/e244f29a-c800-11e5-8b54-8f586d13758c.png)
 
+※UIはModern UI for WPFを使用したときのイメージです
+
 ###Converters
 * BoolToVisibilityConverter
 * NullVisibilityConverter
